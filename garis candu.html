@@ -1,0 +1,1137 @@
+c:\Users\HP\Pictures\Screenshots\Screenshot 2025-12-30 065922.png<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garis Candu Coffee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D4A76A;
+            --accent-color: #3E2723;
+            --light-color: #F5E6D0;
+            --text-color: #333;
+            --transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f9f5f0;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(62, 39, 35, 0.95);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header.scrolled {
+            padding: 12px 0;
+            background-color: rgba(62, 39, 35, 0.98);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+            flex-direction: row-reverse;
+        }
+
+        .logo:hover {
+            color: var(--light-color);
+            transform: scale(1.05);
+        }
+
+        .logo i {
+            margin-left: 10px;
+            font-size: 32px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        .logo-sub {
+            font-size: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            color: var(--light-color);
+            margin-top: 2px;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--light-color);
+            text-decoration: none;
+            font-size: 18px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light-color);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            background-color: var(--light-color);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
+                        url('https://images.unsplash.com/photo-1498804103079-a6351b050096?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.7) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeUp 1.5s ease-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            animation: fadeUp 1s ease-out 0.3s forwards;
+            color: var(--secondary-color);
+            letter-spacing: 1.5px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeUp 1s ease-out 0.6s forwards;
+            color: var(--light-color);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            animation: fadeUp 1s ease-out 0.9s forwards;
+            box-shadow: 0 4px 15px rgba(212, 167, 106, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn:hover {
+            background-color: var(--light-color);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(212, 167, 106, 0.5);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Menu Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            color: var(--accent-color);
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .menu-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .menu-category {
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .menu-category.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .category-title {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            text-align: center;
+            border-bottom: 2px dashed var(--secondary-color);
+            padding-bottom: 15px;
+            position: relative;
+        }
+
+        .category-title i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-item {
+            background-color: var(--light-color);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+            position: relative;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            z-index: 1;
+        }
+
+        .menu-item:nth-child(1) { transition-delay: 0.1s; }
+        .menu-item:nth-child(2) { transition-delay: 0.2s; }
+        .menu-item:nth-child(3) { transition-delay: 0.3s; }
+        .menu-item:nth-child(4) { transition-delay: 0.4s; }
+
+        .menu-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .item-img {
+            height: 200px;
+            width: 100%;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .item-img::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .menu-item:hover .item-img::before {
+            transform: translateX(100%);
+        }
+
+        .menu-item:hover .item-img img {
+            transform: scale(1.05);
+        }
+
+        .item-content {
+            padding: 25px;
+        }
+
+        .item-title {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item-price {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+
+        .item-desc {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background-color: var(--light-color);
+            position: relative;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%238b4513' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 50px;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .about-text.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-text h2 {
+            font-size: 2.8rem;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease 0.3s;
+        }
+
+        .about-image.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+        }
+
+        .about-image img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--accent-color);
+            color: var(--light-color);
+            padding: 70px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            padding-right: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--secondary-color);
+        }
+
+        .footer-column p, .footer-column a {
+            color: #ddd;
+            margin-bottom: 12px;
+            display: block;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Coffee steam animation */
+        @keyframes steam {
+            0% {
+                transform: translateY(0) translateX(0) scale(0.8);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100px) translateX(20px) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        .coffee-steam {
+            position: absolute;
+            width: 8px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            filter: blur(4px);
+            animation: steam 3s infinite ease-out;
+        }
+
+        .steam-1 {
+            top: -20px;
+            left: 30%;
+            animation-delay: 0.5s;
+        }
+
+        .steam-2 {
+            top: -20px;
+            left: 50%;
+            animation-delay: 1s;
+        }
+
+        .steam-3 {
+            top: -20px;
+            left: 70%;
+            animation-delay: 1.5s;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .nav-links li {
+                margin-left: 20px;
+            }
+            
+            .about-text {
+                padding-right: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                background-color: var(--accent-color);
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .menu-items {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .about-text, .about-image {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            
+            .logo {
+                font-size: 24px;
+            }
+            
+            .logo i {
+                font-size: 28px;
+            }
+            
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .btn {
+                padding: 12px 28px;
+                font-size: 16px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .category-title {
+                font-size: 1.8rem;
+            }
+            
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 20px;
+            }
+            
+            .logo i {
+                font-size: 24px;
+            }
+            
+            .logo-sub {
+                font-size: 10px;
+            }
+            
+            .scroll-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <i class="fas fa-mug-hot"></i>
+                    <div class="logo-text">
+                        <span class="logo-main">Garis Candu Coffee</span>
+                        <span class="logo-sub">SINCE 2018</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Garis Candu Coffee</h1>
+            <p>Di setiap tegukan, ada cerita. Di setiap cangkir, ada kenangan. Nikmati pengalaman kopi spesial yang takkan terlupakan, diracik khusus untuk para penikmat sejati.</p>
+            <a href="#menu" class="btn">Jelajahi Menu Kami</a>
+        </div>
+        
+        <!-- Coffee steam animation -->
+        <div class="coffee-steam steam-1"></div>
+        <div class="coffee-steam steam-2"></div>
+        <div class="coffee-steam steam-3"></div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Menu Kami</h2>
+            </div>
+            
+            <!-- Coffee Menu -->
+            <div class="menu-category" id="coffeeMenu">
+                <h3 class="category-title"><i class="fas fa-coffee"></i> Kopi Spesial</h3>
+                <div class="menu-items">
+                    <!-- Menu items akan diisi dengan JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Non-Coffee Menu -->
+            <div class="menu-category" id="nonCoffeeMenu">
+                <h3 class="category-title"><i class="fas fa-glass-whiskey"></i> Minuman Non-Kopi</h3>
+                <div class="menu-items">
+                    <!-- Menu items akan diisi dengan JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Food Menu -->
+            <div class="menu-category" id="foodMenu">
+                <h3 class="category-title"><i class="fas fa-utensils"></i> Makanan & Snack</h3>
+                <div class="menu-items">
+                    <!-- Menu items akan diisi dengan JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" id="aboutText">
+                    <h2>Tentang Garis Candu Coffee</h2>
+                    <p>Garis Candu Coffee didirikan pada tahun 2018 dengan misi menyajikan kopi berkualitas tinggi dengan cita rasa yang konsisten. Kami percaya bahwa secangkir kopi yang baik dapat menghubungkan orang, menginspirasi percakapan, dan menciptakan momen berharga.</p>
+                    <p>Kami bekerja langsung dengan petani kopi lokal untuk memastikan kualitas biji kopi terbaik, yang kemudian kami olah dengan teknik roasting yang tepat untuk menghadirkan karakter unik pada setiap varian kopi kami.</p>
+                    <p>Selain kopi, kami juga menawarkan berbagai minuman non-kopi dan makanan ringan yang dibuat dengan bahan-bahan pilihan untuk melengkapi pengalaman ngopi Anda.</p>
+                    <a href="#contact" class="btn" style="margin-top: 20px;">Kunjungi Kami</a>
+                </div>
+                <div class="about-image" id="aboutImage">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Interior Garis Candu Coffee">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Garis Candu Coffee</h3>
+                    <p>Tempat di mana setiap cangkir bercerita dan setiap tegukan adalah petualangan rasa.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak Kami</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Kopi Sejahtera No. 123, Jakarta</p>
+                    <p><i class="fas fa-phone"></i> (021) 555-0123</p>
+                    <p><i class="fas fa-envelope"></i> info@gariscanducoffee.com</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Jam Buka</h3>
+                    <p>Senin - Jumat: 07:00 - 22:00</p>
+                    <p>Sabtu - Minggu: 08:00 - 23:00</p>
+                    <p>Hari Libur: 09:00 - 21:00</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Garis Candu Coffee. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data menu dengan gambar
+        const menuData = {
+            coffee: [
+                { 
+                    name: "Iced Candu Original", 
+                    price: "Rp 35.000", 
+                    description: "Minuman signature kami dengan es batu dan presisi rasa yang sempurna.",
+                    image: "images/iced-original.jpg"
+                },
+                { 
+                    name: "Candu Signature", 
+                    price: "Rp 38.000", 
+                    description: "Kopi premium dengan latte art yang menawan untuk pengalaman istimewa.",
+                    image: "images/signature.jpg"
+                },
+                { 
+                    name: "Candu Drip", 
+                    price: "Rp 32.000", 
+                    description: "Kopi drip segar dengan metode cold brew yang kaya rasa.",
+                    image: "images/drip-style.jpg"
+                },
+                { 
+                    name: "Iced Candu Creamy", 
+                    price: "Rp 40.000", 
+                    description: "Iced coffee dengan lapisan cream yang lembut dan nikmat.",
+                    image: "images/iced-creamy.jpg"
+                }
+            ],
+            nonCoffee: [
+                { 
+                    name: "Iced Vanilla Latte", 
+                    price: "Rp 32.000", 
+                    description: "Minuman dingin dengan susu dan aroma vanilla yang menenangkan.",
+                    image: "images/vanilla-latte.jpg"
+                },
+                { 
+                    name: "Candu Espresso Shot", 
+                    price: "Rp 30.000", 
+                    description: "Espresso pekat dengan cita rasa yang ekspresif dan kuat.",
+                    image: "images/espresso-shot.jpg"
+                },
+                { 
+                    name: "Iced Mocha Bliss", 
+                    price: "Rp 35.000", 
+                    description: "Kombinasi kopi dan cokelat dengan es untuk kesegaran maksimal.",
+                    image: "images/mocha-iced.jpg"
+                },
+                { 
+                    name: "Iced Black Coffee", 
+                    price: "Rp 28.000", 
+                    description: "Kopi hitam murni dengan karakter yang tegas dan elegan.",
+                    image: "images/black-coffee.jpg"
+                }
+            ],
+            food: [
+                { 
+                    name: "Candu Golden Snack", 
+                    price: "Rp 28.000", 
+                    description: "Camilan crispy yang sempurna menemani secangkir kopi Anda.",
+                    image: "images/golden-snack.jpg"
+                },
+                { 
+                    name: "Candu Fresh Bowl", 
+                    price: "Rp 45.000", 
+                    description: "Sajian segar dengan sayuran pilihan dan dressing istimewa.",
+                    image: "images/fresh-bowl.jpg"
+                },
+                { 
+                    name: "Candu Sweet Treat", 
+                    price: "Rp 25.000", 
+                    description: "Dessert manis yang menyegarkan untuk menutup hari Anda.",
+                    image: "images/sweet-treat.jpg"
+                },
+                { 
+                    name: "Candu Dark Delight", 
+                    price: "Rp 38.000", 
+                    description: "Kue cokelat gelap dengan cita rasa yang dalam dan memuaskan.",
+                    image: "images/dark-delight.jpg"
+                }
+            ]
+        };
+
+        // Fungsi untuk membuat elemen menu dengan gambar
+        function createMenuItem(item) {
+            return `
+                <div class="menu-item">
+                    <div class="item-img">
+                        <img src="${item.image}" alt="${item.name}" loading="lazy">
+                    </div>
+                    <div class="item-content">
+                        <div class="item-title">
+                            <span>${item.name}</span>
+                            <span class="item-price">${item.price}</span>
+                        </div>
+                        <p class="item-desc">${item.description}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render menu ke halaman
+        function renderMenu() {
+            const coffeeContainer = document.querySelector('#coffeeMenu .menu-items');
+            const nonCoffeeContainer = document.querySelector('#nonCoffeeMenu .menu-items');
+            const foodContainer = document.querySelector('#foodMenu .menu-items');
+            
+            coffeeContainer.innerHTML = menuData.coffee.map(createMenuItem).join('');
+            nonCoffeeContainer.innerHTML = menuData.nonCoffee.map(createMenuItem).join('');
+            foodContainer.innerHTML = menuData.food.map(createMenuItem).join('');
+        }
+
+        // Animasi scroll untuk header
+        function handleHeaderScroll() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+
+        // Fungsi untuk tombol scroll ke atas
+        function setupScrollTop() {
+            const scrollTopBtn = document.getElementById('scrollTop');
+            
+            // Tampilkan tombol saat scroll ke bawah
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+            
+            // Scroll ke atas saat tombol diklik
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Animasi untuk elemen saat scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.menu-category, .about-text, .about-image, .menu-item');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Mobile menu toggle
+        function setupMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+        }
+
+        // Smooth scroll for anchor links
+        function setupSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderMenu();
+            setupScrollTop();
+            setupMobileMenu();
+            setupSmoothScroll();
+            animateOnScroll();
+            
+            // Animate menu items with delay
+            setTimeout(() => {
+                document.querySelectorAll('.menu-item').forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, 100 * (index % 4));
+                });
+            }, 300);
+            
+            // Add scroll event listeners
+            window.addEventListener('scroll', handleHeaderScroll);
+            window.addEventListener('scroll', animateOnScroll);
+        });
+    </script>
+</body>
+</html>
